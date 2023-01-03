@@ -1,6 +1,6 @@
 package com.bridgelabz.com;
 
-public class Stack {
+public class Stacks {
     Node head;
     public class Node {
         String data; // initialising data in first location
@@ -12,7 +12,7 @@ public class Stack {
         }
     }
     //Adding the data in first position
-    public void enQueu(String data){
+    public void Push(String data){
         Node newNode = new Node(data); // Making object of node class
         if(head == null){              // Checking if linked list is empty
             head = newNode;
@@ -36,10 +36,10 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-    	Stack ob2 = new Stack();
-        ob2.enQueu("70");
-        ob2.enQueu("30");
-        ob2.enQueu("56");
+        Stacks ob2 = new Stacks();
+        ob2.Push("70");
+        ob2.Push("30");
+        ob2.Push("56");
         ob2.Print();
     }
 }
