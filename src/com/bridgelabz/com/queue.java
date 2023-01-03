@@ -1,6 +1,6 @@
 package com.bridgelabz.com;
 
-public class Stack {
+public class queue {
     Node head;
     public class Node {
         String data; // initialising data in first location
@@ -12,7 +12,7 @@ public class Stack {
         }
     }
     //Adding the data in first position
-    public void Push(String data){
+    public void enQueu(String data){
         Node newNode = new Node(data); // Making object of node class
         if(head == null){              // Checking if linked list is empty
             head = newNode;
@@ -22,13 +22,23 @@ public class Stack {
         head = newNode;
     }
 
-    // deleting the first element
-    public void Pop(){
+    // Deleting the last element
+    public void deQueue(){
         if(head == null){
             System.out.println(" the list is empty");
             return;
         }
-        head = head.next;
+        if(head.next == null){
+            head= null;
+            return;
+        }
+        Node secoundLast = head;
+        Node lastNode = head.next;
+        while(lastNode.next != null){
+            lastNode = lastNode.next;
+            secoundLast = secoundLast.next;
+        }
+        secoundLast.next= null;
     }
 
     //Printing the code
@@ -45,11 +55,11 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack ob2 = new Stack();
-        ob2.Push("70");
-        ob2.Push("30");
-        ob2.Push("56");
-        ob2.Pop();
+        queue ob2 = new queue();
+        ob2.enQueu("70");
+        ob2.enQueu("30");
+        ob2.enQueu("56");
+        ob2.deQueue();
         ob2.Print();
     }
 }
